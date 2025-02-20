@@ -1,31 +1,28 @@
-import { Button } from "@/components/ui/button"
-import { GlassWater } from "lucide-react"
-import Link from "next/link"
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-center text-center">
-        <h1 className="text-6xl font-bold mb-8">
-          Find Your Next <span className="text-primary">Drink Date</span> with <span className="text-primary">Tippsy</span>
-        </h1>
-        <p className="text-xl mb-12">
-          Connect with people who share your taste in beverages
-        </p>
-        <div className="flex gap-4 justify-center">
-          <Button asChild size="lg">
-            <Link href="/login">
-              Login
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
-            <Link href="/signup">
-              Sign Up
-            </Link>
-          </Button>
-        </div>
-      </div>
-      <GlassWater className="absolute opacity-10 w-96 h-96 text-primary" />
-    </main>
-  )
-} 
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
+        />
+        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+          <li className="mb-2">
+            Get started by editing{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
+              src/app/page.tsx
+            </code>
+            .
+          </li>
+          <li>Save and see your changes instantly.</li>
+        </ol>
+      </main>
+    </div>
+  );
+}

@@ -13,7 +13,7 @@ export function Header() {
     <header className="fixed top-0 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
         <Link href="/" className="font-bold">
-          DrinkDate
+          Tippsy
         </Link>
         <div className="flex flex-1 items-center justify-end space-x-4">
           {!isAuthPage && (

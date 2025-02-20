@@ -1,4 +1,4 @@
-# Buy Me a Drink - Dating Web App
+# Tippsy - Dating Web App
 
 A modern dating web application focused on connecting people through their beverage preferences. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
@@ -27,17 +27,15 @@ A modern dating web application focused on connecting people through their bever
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/buy-me-a-drink.git
-cd buy-me-a-drink
+git clone https://github.com/yourusername/tippsy-web.git
+cd tippsy-web
 ```
-
 
 2. Install dependencies:
 
 ```bash
 npm install
 ```
-
 
 3. Create a `.env.local` file in the root directory with your Firebase credentials:
 
@@ -55,7 +53,6 @@ NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 ```bash
 npm run dev
 ```
-
 
 ## Project Structure
 

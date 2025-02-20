@@ -1,28 +1,49 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+// import { GlassWater } from "lucide-react"
+import { Ms_Madi } from "next/font/google"
+import { Bubbles } from "@/components/bubbles"
+import Link from "next/link"
+
+const msMadi = Ms_Madi({
+  weight: "400",
+  subsets: ["latin"],
+})
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-      </main>
-    </div>
-  );
+    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <Bubbles />
+      <div className="z-10 max-w-5xl w-full items-center justify-center text-center">
+        <h1 className="text-6xl font-bold mb-8">
+          Find Your{" "}
+          <span className="text-foreground">Next</span>{" "}
+          <span
+            className={`${msMadi.className} text-8xl hover:text-hot-pink/80 transition-colors`}
+            style={{ color: "#FF007F" }}
+          >
+            Drink Date
+          </span>
+        </h1>
+        <p className="text-xl mb-12 text-muted-foreground">
+          Connect with people who{" "}
+          <span className="text-foreground font-semibold">share your taste</span>{" "}
+          in beverages
+        </p>
+        <div className="flex gap-4 justify-center">
+          <Button asChild size="lg">
+            <Link href="/login">
+              Login
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/signup">
+              Sign Up
+            </Link>
+          </Button>
+        </div>
+      </div>
+      {/* Remove the GlassWater component */}
+      {/* <GlassWater className="absolute opacity-10 w-96 h-96" /> */}
+    </main>
+  )
 }

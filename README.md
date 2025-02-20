@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tippsy - Dating Web App
+
+A modern dating web application focused on connecting people through their beverage preferences. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## Getting Started
 
@@ -6,19 +8,43 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js 14
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Theme:** Dark mode support with next-themes
+- **Icons:** Lucide React
+
+## Development
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── app/          # App router pages
+│   ├── components/   # React components
+│   │   ├── ui/      # Reusable UI components
+│   │   └── ...      # Feature components
+│   ├── lib/         # Utility functions
+│   └── hooks/       # Custom React hooks
+└── public/          # Static assets
+```
 
 ## Learn More
 

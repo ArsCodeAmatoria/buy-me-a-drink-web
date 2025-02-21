@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 // import { GlassWater } from "lucide-react"
 import { Ms_Madi } from "next/font/google"
@@ -10,6 +13,22 @@ const msMadi = Ms_Madi({
 })
 
 export default function Home() {
+  const [text, setText] = useState("")
+  const fullText = "Connect with people who share your taste in beverages"
+
+  useEffect(() => {
+    let index = 0
+    const interval = setInterval(() => {
+      if (index < fullText.length) {
+        setText((prev) => prev + fullText[index])
+        index++
+      } else {
+        clearInterval(interval)
+      }
+    }, 100) // Adjust typing speed here
+    return () => clearInterval(interval)
+  }, []) // Ensure the dependency array is empty to run only once
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <Bubbles />
@@ -25,9 +44,7 @@ export default function Home() {
           </span>
         </h1>
         <p className="text-xl mb-12 text-muted-foreground">
-          Connect with people who{" "}
-          <span className="text-foreground font-semibold">share your taste</span>{" "}
-          in beverages
+          <span className="text-foreground font-semibold">{text}</span>
         </p>
         <div className="flex gap-4 justify-center">
           <Button asChild size="lg">

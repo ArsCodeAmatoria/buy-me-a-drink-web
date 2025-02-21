@@ -49,6 +49,22 @@
     --ring: 224.3 76.3% 48%;
     --hot-pink: 328 100% 60%;
   }
+
+  .blinking-cursor {
+    display: inline-block;
+    width: 1px;
+    background-color: currentColor;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    from, to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
 }
 
 body {

@@ -14,19 +14,28 @@ const msMadi = Ms_Madi({
 
 export default function Home() {
   const [text, setText] = useState("")
+  const [showCursor, setShowCursor] = useState(true)
   const fullText = "Connect with people who share your taste in beverages"
 
   useEffect(() => {
     let index = 0
-    const interval = setInterval(() => {
+    const typingInterval = setInterval(() => {
       if (index < fullText.length) {
         setText((prev) => prev + fullText[index])
         index++
       } else {
-        clearInterval(interval)
+        clearInterval(typingInterval)
       }
     }, 100) // Adjust typing speed here
-    return () => clearInterval(interval)
+
+    const cursorInterval = setInterval(() => {
+      setShowCursor((prev) => !prev)
+    }, 500) // Cursor blink speed
+
+    return () => {
+      clearInterval(typingInterval)
+      clearInterval(cursorInterval)
+    }
   }, []) // Ensure the dependency array is empty to run only once
 
   return (
@@ -44,7 +53,10 @@ export default function Home() {
           </span>
         </h1>
         <p className="text-xl mb-12 text-muted-foreground">
-          <span className="text-foreground font-semibold">{text}</span>
+          <span className="text-foreground font-semibold">
+            {text}
+            {showCursor && <span className="blinking-cursor">|</span>}
+          </span>
         </p>
         <div className="flex gap-4 justify-center">
           <Button asChild size="lg">

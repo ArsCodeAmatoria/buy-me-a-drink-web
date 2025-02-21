@@ -1,65 +1,64 @@
+"use client";
 
 import Link from "next/link";
-import { Olive } from "lucide-react";
+import { Github, Linkedin, Twitter, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="flex justify-center items-center p-8 border-t bg-background text-muted-foreground">
       <div className="container grid grid-cols-4 gap-8">
         <div>
-          <h3 className="font-semibold mb-2">Products</h3>
+          <h3 className="font-semibold mb-2">Explore</h3>
           <ul className="space-y-1">
-            <li><Link href="#">AI</Link></li>
-            <li><Link href="#">Enterprise</Link></li>
-            <li><Link href="#">Next.js</Link></li>
-            <li><Link href="#">Observability</Link></li>
-            <li><Link href="#">Previews</Link></li>
-            <li><Link href="#">Rendering</Link></li>
-            <li><Link href="#">Security</Link></li>
-            <li><Link href="#">Turbo</Link></li>
-            <li><Link href="#">v0</Link></li>
+            <li><Link href="/about" className="hover:text-foreground">About Us</Link></li>
+            <li><Link href="/services" className="hover:text-foreground">Our Services</Link></li>
+            <li><Link href="/blog" className="hover:text-foreground">Blog</Link></li>
+            <li><Link href="/contact" className="hover:text-foreground">Contact</Link></li>
           </ul>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">Resources</h3>
+          <h3 className="font-semibold mb-2">Support</h3>
           <ul className="space-y-1">
-            <li><Link href="#">Community</Link></li>
-            <li><Link href="#">Docs</Link></li>
-            <li><Link href="#">Guides</Link></li>
-            <li><Link href="#">Help</Link></li>
-            <li><Link href="#">Integrations</Link></li>
-            <li><Link href="#">Pricing</Link></li>
-            <li><Link href="#">Resources</Link></li>
-            <li><Link href="#">Solution Partners</Link></li>
-            <li><Link href="#">Templates</Link></li>
+            <li><Link href="/faq" className="hover:text-foreground">FAQ</Link></li>
+            <li><Link href="/support" className="hover:text-foreground">Customer Support</Link></li>
+            <li><Link href="/terms" className="hover:text-foreground">Terms of Service</Link></li>
+            <li><Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link></li>
           </ul>
         </div>
         <div>
           <h3 className="font-semibold mb-2">Company</h3>
           <ul className="space-y-1">
-            <li><Link href="#">About</Link></li>
-            <li><Link href="#">Blog</Link></li>
-            <li><Link href="#">Careers</Link></li>
-            <li><Link href="#">Changelog</Link></li>
-            <li><Link href="#">Contact Us</Link></li>
-            <li><Link href="#">Customers</Link></li>
-            <li><Link href="#">Partners</Link></li>
-            <li><Link href="#">Privacy Policy</Link></li>
-            <li><Link href="#">Legal</Link></li>
+            <li><Link href="/careers" className="hover:text-foreground">Careers</Link></li>
+            <li><Link href="/partners" className="hover:text-foreground">Partners</Link></li>
+            <li><Link href="/press" className="hover:text-foreground">Press</Link></li>
+            <li><Link href="/investors" className="hover:text-foreground">Investors</Link></li>
           </ul>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">Social</h3>
-          <ul className="space-y-1">
-            <li><Link href="#">GitHub</Link></li>
-            <li><Link href="#">LinkedIn</Link></li>
-            <li><Link href="#">Twitter</Link></li>
-            <li><Link href="#">YouTube</Link></li>
+          <h3 className="font-semibold mb-2">Follow Us</h3>
+          <ul className="flex space-x-4">
+            <li>
+              <Link href="https://github.com" aria-label="GitHub" className="hover:text-foreground">
+                <Github className="h-6 w-6" />
+              </Link>
+            </li>
+            <li>
+              <Link href="https://linkedin.com" aria-label="LinkedIn" className="hover:text-foreground">
+                <Linkedin className="h-6 w-6" />
+              </Link>
+            </li>
+            <li>
+              <Link href="https://twitter.com" aria-label="Twitter" className="hover:text-foreground">
+                <Twitter className="h-6 w-6" />
+              </Link>
+            </li>
+            <li>
+              <Link href="https://youtube.com" aria-label="YouTube" className="hover:text-foreground">
+                <Youtube className="h-6 w-6" />
+              </Link>
+            </li>
           </ul>
         </div>
-      </div>
-      <div className="mt-4 flex justify-center">
-        <Olive className="h-6 w-6 text-muted-foreground" />
       </div>
     </footer>
   );

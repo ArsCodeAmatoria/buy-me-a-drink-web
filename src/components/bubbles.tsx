@@ -1,9 +1,11 @@
 "use client"
 
 import { useEffect, useRef } from 'react'
+import { useTheme } from 'next-themes'
 
 export function Bubbles() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const { theme } = useTheme()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -42,7 +44,9 @@ export function Bubbles() {
       bubbles.forEach(bubble => {
         ctx.beginPath()
         ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(251, 238, 193, ${bubble.opacity})`
+        // Adjust color based on theme
+        const color = theme === 'dark' ? 'rgba(251, 238, 193, ' : 'rgba(150, 130, 100, '
+        ctx.fillStyle = `${color}${bubble.opacity})`
         ctx.fill()
 
         // Move bubble up
@@ -68,7 +72,7 @@ export function Bubbles() {
 
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [theme]) // Add theme as a dependency
 
   return (
     <canvas
